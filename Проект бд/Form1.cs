@@ -48,6 +48,7 @@ namespace Проект_бд
                 string query = "SELECT [num] FROM [Table1] WHERE [Dnom] = \"" + D + "\"";
                 command =  new OleDbCommand(query, Diameters);
                 int j = Convert.ToInt32(command.ExecuteScalar().ToString());
+                j++;
                 while(j != 0)
                 {
                     query = "SELECT [Dnom] FROM [Table1] WHERE [num] = " + j;
@@ -79,7 +80,16 @@ namespace Проект_бд
             }
             e.Handled = true;
         }
-
+        private void box1CheckBox1_Click(object sender, System.EventArgs e){
+            if(box1CheckBox1.Checked){
+            groupBox1.Controls.Add(this.box1Label2);
+            groupBox1.Controls.Add(this.box1ComboBox1);
+            }
+            if(!box1CheckBox1.Checked){
+            groupBox1.Controls.Remove(this.box1Label2);
+            groupBox1.Controls.Remove(this.box1ComboBox1);
+            }
+        }
         private void tab1Button1_Click(object sender, System.EventArgs e)
         {
 
@@ -92,8 +102,25 @@ namespace Проект_бд
         }
         private void box2Button1_Click(object sender, EventArgs e)//    При нажатии на кнопку 1 - Выполнить, происходит рассчет
         {
+            string query;
+            OleDbCommand command;
+            string Step;
             string D = box1TextBox1.Text;
-            string Step = box1ComboBox1.Text;
+            bool smallStep = box1CheckBox1.Checked;
+            if(smallStep){
+                Step = box1ComboBox1.Text;
+            }
+            else
+            {
+                query = "SELECT [num] FROM [Table1] WHERE [Dnom] = \"" + D + "\"";
+                command =  new OleDbCommand(query, Diameters);
+                int j = Convert.ToInt32(command.ExecuteScalar().ToString());
+                query = "SELECT [Step] FROM [Table1] WHERE [num] = " + j;
+                command =  new OleDbCommand(query, Diameters);
+                string f = command.ExecuteScalar().ToString();
+                double d3_ = Convert.ToDouble(f);
+                Step = d3_.ToString();
+            }
             string Str = box1TextBox3.Text;
             string LRezb = box1TextBox2.Text;
             string As = box3TextBox1.Text;
@@ -102,7 +129,6 @@ namespace Проект_бд
             string SPov = box3TextBox4.Text;
 
             D = sZ(D);
-            Step = sZ(Step);
             Str = sZ(Str);
             As = sZ(As);
             Fp = sZ(Fp);
@@ -117,10 +143,6 @@ namespace Проект_бд
                 return o;
             }
 
-            string query;
-            OleDbCommand command;
-
-            bool smallStep = box1CheckBox1.Checked;
             try //Расчет площади сечения резьбы в мм2
             {
                 //Рассчетная площадь сечения по ГОСТ 898-1 2014
@@ -181,7 +203,7 @@ namespace Проект_бд
             double d_ = Convert.ToDouble(D);//Номинальный диаметр
             double s_ = Convert.ToDouble(Step);//Шаг резьбы
             double l_ = Convert.ToDouble(LRezb);//Длина резьбы
-            double H = 0.866025404 * s_ * 0.86602540378;//Высота исходного треугольника по ГОСТ 9150-2002
+            double H = 0.866025404 * s_ * (Math.Cos(30) * 180 / Math.PI);//Высота исходного треугольника по ГОСТ 9150-2002
 
             try //Расчет площиди полной поверхности резьбы
             {
