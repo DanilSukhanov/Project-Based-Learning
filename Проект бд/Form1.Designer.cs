@@ -259,13 +259,12 @@ namespace Проект_бд
 
             //add to groupBox1
             groupBox1.Controls.Add(this.box1Label1);
-            groupBox1.Controls.Add(this.box1Label2);
             groupBox1.Controls.Add(this.box1Label3);
             groupBox1.Controls.Add(this.box1Label4);
             groupBox1.Controls.Add(this.box1TextBox1);
+
             groupBox1.Controls.Add(this.box1TextBox2);
             groupBox1.Controls.Add(this.box1TextBox3);
-            groupBox1.Controls.Add(this.box1ComboBox1);
             groupBox1.Controls.Add(this.box1CheckBox1);
             groupBox1.Controls.Add(this.box1Button1);
 
@@ -325,6 +324,7 @@ namespace Проект_бд
             groupBox3.Text = "Результаты расчета";
             groupBox3.Size = new System.Drawing.Size (325,170);
 
+            box1CheckBox1.Click += new EventHandler(box1CheckBox1_Click);
             box1Button1.Click += new EventHandler(box1Button1_Click);
             box2Button1.Click += new EventHandler(box2Button1_Click);
             box1TextBox1.KeyPress += new KeyPressEventHandler(box1TextBox1_KeyPress);
