@@ -90,10 +90,6 @@ namespace Проект_бд
             groupBox1.Controls.Remove(this.box1ComboBox1);
             }
         }
-        private void tab1Button1_Click(object sender, System.EventArgs e)
-        {
-
-        }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)// При закрытии формы 1, закрывать субд
         {
             Rezba.Close();
@@ -104,7 +100,7 @@ namespace Проект_бд
         {
             string query;
             OleDbCommand command;
-            string Step;
+            string Step = ""    ;
             string D = box1TextBox1.Text;
             bool smallStep = box1CheckBox1.Checked;
             if(smallStep){
@@ -112,14 +108,21 @@ namespace Проект_бд
             }
             else
             {
-                query = "SELECT [num] FROM [Table1] WHERE [Dnom] = \"" + D + "\"";
-                command =  new OleDbCommand(query, Diameters);
-                int j = Convert.ToInt32(command.ExecuteScalar().ToString());
-                query = "SELECT [Step] FROM [Table1] WHERE [num] = " + j;
-                command =  new OleDbCommand(query, Diameters);
-                string f = command.ExecuteScalar().ToString();
-                double d3_ = Convert.ToDouble(f);
-                Step = d3_.ToString();
+                try
+                {
+                    query = "SELECT [num] FROM [Table1] WHERE [Dnom] = \"" + D + "\"";
+                    command =  new OleDbCommand(query, Diameters);
+                    int j = Convert.ToInt32(command.ExecuteScalar().ToString());
+                    query = "SELECT [Step] FROM [Table1] WHERE [num] = " + j;
+                    command =  new OleDbCommand(query, Diameters);
+                    string f = command.ExecuteScalar().ToString();
+                    double d3_ = Convert.ToDouble(f);
+                    Step = d3_.ToString();
+                }
+                catch
+                {
+
+                }
             }
             string Str = box1TextBox3.Text;
             string LRezb = box1TextBox2.Text;
@@ -200,15 +203,24 @@ namespace Проект_бд
 
             double L;//Длина спирали
             double L1;
-            double d_ = Convert.ToDouble(D);//Номинальный диаметр
-            double s_ = Convert.ToDouble(Step);//Шаг резьбы
-            double l_ = Convert.ToDouble(LRezb);//Длина резьбы
-            double H = 0.866025404 * s_ * (Math.Cos(30) * 180 / Math.PI);//Высота исходного треугольника по ГОСТ 9150-2002
-
-            try //Расчет площиди полной поверхности резьбы
+            double d_ = 0;
+            double s_ = 0;
+            double l_ = 0;
+            double H = 0;
+            try
             {
-                //L = 2 * Math.PI * Math.Sqrt(d_*d_ + s_*s_);//Длина одного витка
-                L1 = Math.Sqrt(Math.Pow(Math.PI*d_,2)+Math.Pow(s_,2));//Длина одного витка линии по Учебному пособию 1
+            d_ = Convert.ToDouble(D);//Номинальный диаметр
+            s_ = Convert.ToDouble(Step);//Шаг резьбы
+            l_ = Convert.ToDouble(LRezb);//Длина резьбы
+            H = 0.866025404 * s_ * (Math.Cos(30*Math.PI/180));//Высота исходного треугольника по ГОСТ 9150-2002
+            }
+            catch
+            {
+
+            }
+            try //Расчет площади полной поверхности резьбы
+            {
+                L1 = Math.Sqrt(Math.Pow(Math.PI*d_,2)+Math.Pow(s_,2));//Длина одного витка линии по Учебному пособию 1, с 6
                 L = (l_ / s_) * L1;//Длина всей спирали
                 double sp_ = H * L * 2;//Площадь поверхности
                 sp_ += 2 * Convert.ToDouble(As);//Площадь поверхности с учетом торцев
@@ -223,8 +235,12 @@ namespace Проект_бд
             box3TextBox2.Text = Fp;
             //Значение разрушающей нагрузки
             box3TextBox3.Text = Fm;
-            //Значение полной плозади поверхности резьбы
+            //Значение полной площади поверхности резьбы
+            if(d_> 0 && l_ > 0 && s_ > 0){
             box3TextBox4.Text = SPov;
+            }else{
+                box3TextBox4.Text = '0'.ToString();
+            }
         }
     
     }
