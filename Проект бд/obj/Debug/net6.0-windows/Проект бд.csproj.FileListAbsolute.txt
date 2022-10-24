@@ -18,3 +18,24 @@ C:\Users\admin\source\repos\Проект бд\Проект бд\obj\Debug\net6.0
 C:\Users\admin\source\repos\Проект бд\Проект бд\obj\Debug\net6.0-windows\Проект бд.pdb
 C:\Users\admin\source\repos\Проект бд\Проект бд\obj\Debug\net6.0-windows\Проект бд.genruntimeconfig.cache
 C:\Users\admin\source\repos\Проект бд\Проект бд\obj\Debug\net6.0-windows\ref\Проект бд.dll
+C:\Users\Danil Sukhanov\Documents\GitHub\Project-Based-Learning\Проект бд\bin\Debug\net6.0-windows\Проект бд.exe
+C:\Users\Danil Sukhanov\Documents\GitHub\Project-Based-Learning\Проект бд\bin\Debug\net6.0-windows\Проект бд.deps.json
+C:\Users\Danil Sukhanov\Documents\GitHub\Project-Based-Learning\Проект бд\bin\Debug\net6.0-windows\Проект бд.runtimeconfig.json
+C:\Users\Danil Sukhanov\Documents\GitHub\Project-Based-Learning\Проект бд\bin\Debug\net6.0-windows\Проект бд.dll
+C:\Users\Danil Sukhanov\Documents\GitHub\Project-Based-Learning\Проект бд\bin\Debug\net6.0-windows\Проект бд.pdb
+C:\Users\Danil Sukhanov\Documents\GitHub\Project-Based-Learning\Проект бд\bin\Debug\net6.0-windows\System.Data.OleDb.dll
+C:\Users\Danil Sukhanov\Documents\GitHub\Project-Based-Learning\Проект бд\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Data.OleDb.dll
+C:\Users\Danil Sukhanov\Documents\GitHub\Project-Based-Learning\Проект бд\obj\Debug\net6.0-windows\Проект бд.csproj.AssemblyReference.cache
+C:\Users\Danil Sukhanov\Documents\GitHub\Project-Based-Learning\Проект бд\obj\Debug\net6.0-windows\Проект_бд.Form1.resources
+C:\Users\Danil Sukhanov\Documents\GitHub\Project-Based-Learning\Проект бд\obj\Debug\net6.0-windows\Проект_бд.Form3.resources
+C:\Users\Danil Sukhanov\Documents\GitHub\Project-Based-Learning\Проект бд\obj\Debug\net6.0-windows\Проект бд.csproj.GenerateResource.cache
+C:\Users\Danil Sukhanov\Documents\GitHub\Project-Based-Learning\Проект бд\obj\Debug\net6.0-windows\Проект бд.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Danil Sukhanov\Documents\GitHub\Project-Based-Learning\Проект бд\obj\Debug\net6.0-windows\Проект бд.AssemblyInfoInputs.cache
+C:\Users\Danil Sukhanov\Documents\GitHub\Project-Based-Learning\Проект бд\obj\Debug\net6.0-windows\Проект бд.AssemblyInfo.cs
+C:\Users\Danil Sukhanov\Documents\GitHub\Project-Based-Learning\Проект бд\obj\Debug\net6.0-windows\Проект бд.csproj.CoreCompileInputs.cache
+C:\Users\Danil Sukhanov\Documents\GitHub\Project-Based-Learning\Проект бд\obj\Debug\net6.0-windows\Проект бд.csproj.CopyComplete
+C:\Users\Danil Sukhanov\Documents\GitHub\Project-Based-Learning\Проект бд\obj\Debug\net6.0-windows\Проект бд.dll
+C:\Users\Danil Sukhanov\Documents\GitHub\Project-Based-Learning\Проект бд\obj\Debug\net6.0-windows\refint\Проект бд.dll
+C:\Users\Danil Sukhanov\Documents\GitHub\Project-Based-Learning\Проект бд\obj\Debug\net6.0-windows\Проект бд.pdb
+C:\Users\Danil Sukhanov\Documents\GitHub\Project-Based-Learning\Проект бд\obj\Debug\net6.0-windows\Проект бд.genruntimeconfig.cache
+C:\Users\Danil Sukhanov\Documents\GitHub\Project-Based-Learning\Проект бд\obj\Debug\net6.0-windows\ref\Проект бд.dll
