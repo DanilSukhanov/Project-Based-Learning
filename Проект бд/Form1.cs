@@ -200,7 +200,7 @@ namespace Проект_бд
             double d1 = Convert.ToDouble(box4TextBox4.Text);
             double d2 = Convert.ToDouble(box4TextBox5.Text);
             double S = Convert.ToDouble(box4TextBox6.Text);
-            double ss = Math.Pow(((d2-d1)/2),2)*Math.PI;
+            double ss = Math.Pow(d2/2,2)*Math.PI - Math.Pow(d1/2,2)*Math.PI ;
             double sp = ss*2 + Math.PI*d1*S + Math.PI*d2*S; 
             box4TextBox7.Text = sp.ToString();
         }
